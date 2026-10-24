@@ -22,6 +22,20 @@
 
 **학습 준비용·결과 확인용 사진은 파일 목록의 `split` 열로 구분합니다.** `train`은 학습용, `val`은 검증용입니다.
 
+[파일 목록](metadata/generation_manifest.csv)을 열면 아래와 같은 행이 있습니다. 실제 파일 중 두 장을 골라 필요한 열만 옮겼습니다.
+
+| `image_id` | `track` | `split` | 실습에서 할 일 |
+|---|---|---|---|
+| `Q-IND-001` | `quality` | `train` | `Q-IND-001.png`를 모델 학습에 사용 |
+| `Q-IND-023` | `quality` | `val` | `Q-IND-023.png`는 학습에 넣지 않고, 학습 후 판정 결과 확인에 사용 |
+
+두 사진은 모두 품질관리(`quality`) 자료입니다. 같은 폴더에 있어도 `split` 값에 따라 사용하는 단계가 다릅니다.
+
+사진을 찾을 때는 같은 행의 `filename` 열을 봅니다. 위 두 파일의 실제 위치는 다음과 같습니다.
+
+- 학습용: [assets/dataset/images/Q-IND-001.png](assets/dataset/images/Q-IND-001.png)
+- 검증용: [assets/dataset/images/Q-IND-023.png](assets/dataset/images/Q-IND-023.png)
+
 사진은 모두 `assets/dataset/images/`에 있습니다. `train`·`val`이라는 별도 폴더는 없습니다.
 
 `subtype` 열은 사진의 유형을 나타냅니다.
